@@ -1,0 +1,13 @@
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - init: echo "init script"
+      sudo apt update
+      sudo apt install ffmpeg -y
+      wget https://github.com/tickstep/cloudpan189-go/releases/latest/download/cloudpan189-go-linux-amd64.tar.gz
+      tar -xvf cloudpan189-go-linux-amd64.tar.gz
+
+ports:
+  - port: 3000
+    onOpen: open-preview
